@@ -6,7 +6,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import ReactDOM from 'react-dom';
+import { SocialIcon } from 'react-social-icons';
+// import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import { FaInstagram } from 'react-icons/fa';
 
 
 // function Nav() {
@@ -63,43 +66,48 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 // }
 function Footer() {
 
-  function Footer() {
-    if (Auth.loggedIn()) {
+  // function Footer() {
+    // if (Auth.loggedIn()) {
+    //   return (
+    //     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+    //       <Container fluid>
+    //         {/* <Navbar.Brand href="/"> Privileged Pieces </Navbar.Brand> */}
+    //         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    //         <Navbar.Collapse id="responsive-navbar-nav">
+    //           <Nav className="m-auto">
+    //             <Nav.Link href="https://instagram.com/privileged_pieces?igshid=MDM4ZDc5MmU=" target="_blank" rel="noopener noreferrer"> Instagram Link </Nav.Link>
+    //             <Nav.Link href="/#otherlink"> Facebook Link </Nav.Link>
+    //           </Nav>
+    //         </Navbar.Collapse>
+    //       </Container>
+    //     </Navbar>
+    //   )
+    // } else {
       return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ paddingLeft:"20px", paddingRight:"20px" }}>
-        <Container fluid>
-          {/* <Navbar.Brand href="/"> Privileged Pieces </Navbar.Brand> */}
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="m-auto">
-              <Nav.Link href="https://instagram.com/privileged_pieces?igshid=MDM4ZDc5MmU=" target="_blank" rel="noopener noreferrer"> Instagram Link </Nav.Link>
-              <Nav.Link href="/#otherlink"> Facebook Link </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+        <>
+          <br />
+          <br />
+          <br />
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+            <Container fluid>
+              {/* <Navbar.Brand href="/"> Privileged Pieces </Navbar.Brand> */}
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="m-auto">
+                  <Nav.Link href="https://instagram.com/privileged_pieces" target="_blank" rel="noopener noreferrer">
+                    <FaInstagram style={{ height:"36pt", width:"36pt"}} />
+                  </Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+        </>
       )
-    } else {
-      return ( 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ paddingLeft:"20px", paddingRight:"20px" }}>
-        <Container fluid>
-          {/* <Navbar.Brand href="/"> Privileged Pieces </Navbar.Brand> */}
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="m-auto">
-              <Nav.Link href="https://instagram.com/privileged_pieces?igshid=MDM4ZDc5MmU=" target="_blank" rel="noopener noreferrer"> Instagram Link </Nav.Link>
-              <Nav.Link href="/#otherlink"> Facebook Link </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-        )
     }
-  }
+  // }
 
-  return (
-    Footer()
-  )
-}
+  // return (
+  //   Footer()
+  // )
 
 export default Footer;

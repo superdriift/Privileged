@@ -9,6 +9,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
+import Necklace from './pages/Categories/Necklace';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
@@ -18,7 +19,9 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import Cart from './components/Cart'
+
 
 
 const httpLink = createHttpLink({
@@ -48,40 +51,45 @@ function App() {
           <StoreProvider>
             <Nav />
             <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
-              <Route 
-                path="/success" 
-                element={<Success />} 
-              />
-              <Route 
-                path="/orderHistory" 
-                element={<OrderHistory />} 
-              />
-              <Route 
-                path="/products" 
-                element={<Products />} 
-              />
-              <Route 
-                path="/products/:id" 
-                element={<Detail />} 
+              <Route
+                path="/"
+                element={<Home />}
               />
               <Route
-                path="*" 
-                element={<NoMatch />} 
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              <Route
+                path="/success"
+                element={<Success />}
+              />
+              <Route
+                path="/orderHistory"
+                element={<OrderHistory />}
+              />
+              <Route
+                path="/products"
+                element={<Products />}
+              />
+              <Route
+                path="/products/:id"
+                element={<Detail />}
+              />
+              <Route
+                path={"products/necklace"}
+                element={<Necklace />}
+              />
+              <Route
+                path="*"
+                element={<NoMatch />}
               />
             </Routes>
-            <Footer/>
+            <Footer />
+            <Cart/>
           </StoreProvider>
         </div>
       </Router>

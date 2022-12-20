@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/col';
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -83,35 +86,64 @@ function Detail() {
 
   return (
     <>
-      <h1> TESTING 123</h1>
-
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/products">← Products</Link>
+        <Container fluid style={{ padding: "20px" }}>
+          <Link style={{ color: "black", textDecoration: "none", fontFamily:"Proxima Nova" }} to="/products">← Products</Link>
+          <br />
+          <br />
+          <br />
+          <Row>
 
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
+          </Row>
+          <br />
+          <Row>
+            <Col>
+            <br/>
+            <br/>
+              <div style={{ textAlign:"center" }}>
+              <h1 style={{ fontFamily:"Inknut Antiqua" }}> {currentProduct.name} </h1>
+              <p style={{ height:"1pt" }} />
+            <p style={{ fontSize:"18pt", fontFamily:"Proxima Nova", fontStyle:"" }}>{currentProduct.description}</p>
+            <br/>
+                <h1 style={{ fontFamily:"Inknut Antiqua"}}>
+                  <strong></strong>${currentProduct.price}{' '}
+                </h1>
+                <br />
+                <br />
+                <Button size="lg" variant="outline-success" style={{ fontFamily:"Inknut Antiqua" }} onClick={addToCart}> Add To Cart </Button>{' '}
+                {/* <button style={{ size:"lg" }} onClick={addToCart}>Add to Cart</button> */}
+                {/* <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
-            </button>
-          </p>
-
+            </button> */}
+              </div>
+              {/* <div >
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
-        </div>
+          </div> */}
+            </Col>
+            <Col>
+            <div id='image' style={{ textAlign: "left top " }}>
+                <img className='bg-image hover-zoom'
+                  src={`/images/${currentProduct.image}`}
+                  alt={currentProduct.name}
+                />
+              </div>
+            </Col>
+          </Row>
+          <br/>
+          <br/>
+          <br/>
+
+
+        </Container>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
-      <Cart />
+      {/* <Cart /> */}
     </>
   );
 }

@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+
+
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -31,13 +36,17 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
-
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
+    <>
+    <Container fluid style={{ padding: "20px" }}> 
+      <Link style={{ color: "black", textDecoration: "none", fontFamily:"Proxima Nova" }} to="/login">← Login</Link>
+      <br/>
+      <br/>
+      <h1 style={{ textAlign:"center", fontFamily:"Inknut Antiqua" }}> Signup </h1>
+      <br/>
+      <div style={{ display:"flex", justifyContent:"center" }}>
+      <form  onSubmit={handleFormSubmit}>
+      <div className="flex-row space-between my-2">
+          <label htmlFor="firstName" style={{ fontFamily: "Proxima Nova" }}>First Name:</label>
           <input
             placeholder="First"
             name="firstName"
@@ -47,7 +56,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastName" style={{ fontFamily: "Proxima Nova" }}>Last Name:</label>
           <input
             placeholder="Last"
             name="lastName"
@@ -57,7 +66,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" style={{ fontFamily: "Proxima Nova" }}>Email:</label>
           <input
             placeholder="youremail@test.com"
             name="email"
@@ -67,7 +76,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd" style={{ fontFamily: "Proxima Nova" }}>Password:</label>
           <input
             placeholder="******"
             name="password"
@@ -76,11 +85,28 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        <div className="flex-row flex-center">
+          {/* <button type="submit">Submit</button> */}
+          <Button size="lg" type="submit" style={{ fontFamily: "Inknut Antiqua" }} variant="outline-success">Signup</Button>{' '}
         </div>
       </form>
-    </div>
+      </div>
+      </Container>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      </>
   );
 }
 

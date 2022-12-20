@@ -1,36 +1,36 @@
 const db = require('./connection');
 const { Category, Product, User } = require('../models');
-// COMPLETE Product Data
-// const productData = require('./productData.json')
-// Import category data & user data
-const categoryData = require('./categoryData.json')
-
-
-
-
+// const categoryData = require('./categoryData.json')
 
 db.once('open', async () => {
-  await Category.deleteMany({});
-  const categories =  await Category.create(categoryData)
 
+  await Category.deleteMany();
+  
+  const categories =  await Category.insertMany([
+    { name: "Necklace" },
+    { name: "Ring" },
+    { name: "Pendant" },
+    { name: "Household" }
+  ])
 
-  await Product.deleteMany({});
-  await Product.create([
+  await Product.deleteMany();
+
+  await Product.insertMany([
     {
         name: "Jade Bear Rope Necklace",
         description: "Jade. Teddy Bear Rope Necklace. Hand carved. Green.",
         image: "jbrn.jpeg",
         price: 75.00,
         quantity: 100,
-        categories: categories[0]._id
+        category: categories[0]._id
     },
     {
-        name: "Jade Hog/Pig Rope Necklace",
+        name: "Jade Hog / Pig Rope Necklace",
         description: "Jade. Hog/Pig Rope Necklace. Hand carved. <br/> The pig is a sociable, peace-loving creature that’s patient and thoughtful.",
         image: "jhprn.jpeg",
         price: 75.00,
         quantity: 100,
-        categories: categories[0]._id
+        category: categories[0]._id
     },
     {
         name: "Jade Foo Dog Rope Necklace",
@@ -38,7 +38,7 @@ db.once('open', async () => {
         image: "jfdrn.jpeg",
         price: 75.00,
         quantity: 100,
-        categories: categories[0]._id
+        category: categories[0]._id
     },
     {
         name: "Jade Mermaid Rope Necklace",
@@ -46,7 +46,7 @@ db.once('open', async () => {
         image: "jmrn.jpeg",
         price: 75.00,
         quantity: 100,
-        categories: categories[0,6]._id,
+        category: categories[0]._id,
     },
     {
         name: "Jade Dragon Decorative Comb",
@@ -54,7 +54,7 @@ db.once('open', async () => {
         image: "jddc.jpeg",
         price: 300.00,
         quantity: 100,
-        categories: categories[3]._id
+        category: categories[3]._id
     },
     {
         name: "Jade 2-Piece Dragon Rope Necklace Set",
@@ -62,7 +62,7 @@ db.once('open', async () => {
         image: "j2pdrn.jpeg",
         price: 125.00,
         quantity: 100,
-        categories: categories[0,8]._id, 
+        category: categories[0]._id, 
     }
 ]);
 

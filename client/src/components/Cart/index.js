@@ -8,6 +8,8 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -62,43 +64,43 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
+      <div className="cart-closed" style={{ textAlign: "center" }} onClick={toggleCart}>
+        {/* <span role="img" aria-label="trash">
           🛒
-        </span>
+        </span> */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="26pt" height="26pt" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
       </div>
     );
   }
 
   return (
     <div className="cart">
-      <div className="close" onClick={toggleCart}>
-        [close]
-      </div>
-      <h2>Shopping Cart</h2>
+      <Button variant='outline-danger' className='close' onClick={toggleCart}>
+        Close
+      </Button>
+      <h2 style={{ fontFamily: "Inknut Antiqua" }}>Shopping Cart</h2>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
-
+          <br/>
           <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
+            <span style={{ fontFamily: "Inknut Antiqua", fontWeight:"", fontSize:"14pt" }} >Total: ${calculateTotal()}</span>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <Button variant="outline-success" style={{ textDecoration:"none" }} onClick={submitCheckout} >Checkout</Button>
             ) : (
-              <span>(log in to check out)</span>
+              <Button href="/login" variant="outline-success" style={{ textDecoration:"none" }} >Login to Checkout</Button>
             )}
           </div>
         </div>
       ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
-        </h3>
+        <h4 style={{ fontFamily: "Inknut Antiqua" }}n>
+          No items in your cart
+        </h4>
       )}
     </div>
   );

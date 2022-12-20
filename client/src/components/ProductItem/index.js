@@ -6,10 +6,12 @@ import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Stack from 'react-bootstrap/Stack';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Image from 'react-bootstrap/Image'
 
 
 
@@ -22,7 +24,7 @@ function ProductItem(item) {
     _id,
     price,
     quantity,
-    description
+    description,
   } = item;
 
   const { cart } = state
@@ -54,22 +56,26 @@ function ProductItem(item) {
 
   return (
     <>
-      <div >
-          <Card style={{ width: "18rem", paddingTop:"20px", margin:"5px, 10px", border: "none", background:"lightgrey" }}>
+          {/* <div style={{ display:"flexbox"}}> */}
+          <div style={{ margin: "5px"}}>
+          <Card style={{ border: "none", background:"lightgrey", width:"auto", maxWidth:"480px", height:"850px" }}>
             <Card.Img variant="top" src={`/images/${image}`} />
             <Card.Body>
-              <Card.Title> {name} </Card.Title>
-              <Card.Text style={{ fontStyle: "italic" }}>
+              <Card.Title style={{ fontFamily: "Inknut Antiqua", fontWeight: 525, fontSize:"20pt" }}> {name} </Card.Title>
+              <p style={{ fontSize:"1pt" }}> </p>
+              <Card.Text style={{ fontFamily: "Proxima Nova", fontWeight: 525, fontSize:"15pt" }}>
                 {description}
               </Card.Text>
-              <Card.Text style={{ fontStyle: "bold" }}>
+              <Card.Text style={{ fontFamily: "Inknut Antiqua", fontWeight: 525, fontSize:"18pt" }}>
                 ${price}
               </Card.Text>
             </Card.Body>
             <Container>
-              <Row style={{ display: "flex", flexFlow: "row-wrap", justifyContent: "space-around" }}>
-                <Button onClick={addToCart} variant="light" style={{ marginBottom:"5px"}}> Add To Cart </Button>
-                <Button href={`/products/${_id}`} variant="light"> View </Button>
+              <Row>
+              <Stack gap={2} >
+                <Button size="lg" className="m-auto" onClick={addToCart} style={{ width:"18rem", display:"flex", justifyContent:"center", fontFamily:"Inknut Antiqua" }} variant="outline-success" > Add To Cart </Button>
+                <Button size="lg" className="m-auto" onClick={addToCart} style={{ width:"15rem", display:"flex", justifyContent:"center", fontFamily:"Inknut Antiqua", textDecoration: "none" }} href={`/products/${_id}`} variant="outline-dark"> View </Button>
+             </Stack>
               </Row>
             </Container>
             <Row> <br /> </Row>
