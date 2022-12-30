@@ -9,10 +9,13 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
-import Necklace from './pages/Categories/Necklace';
+import Profile from './pages/Profile';
+import Contact from './pages/Contact';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
+import About from './pages/About';
+import Wishlist from './pages/Wishlist'
 import Products from './pages/Products'
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
@@ -47,7 +50,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div >
           <StoreProvider>
             <Nav />
             <Routes>
@@ -68,7 +71,7 @@ function App() {
                 element={<Success />}
               />
               <Route
-                path="/orderHistory"
+                path="/orderhistory"
                 element={<OrderHistory />}
               />
               <Route
@@ -76,12 +79,24 @@ function App() {
                 element={<Products />}
               />
               <Route
+                path="/wishlist"
+                element={<Wishlist />}
+              />
+              <Route
+                path="/contact"
+                element={<Contact />}
+              />
+              <Route
                 path="/products/:id"
                 element={<Detail />}
               />
               <Route
-                path={"products/necklace"}
-                element={<Necklace />}
+                path={"/about"}
+                element={<About />}
+              />
+              <Route
+                path={"/profile"}
+                element={<Profile />}
               />
               <Route
                 path="*"
@@ -89,7 +104,7 @@ function App() {
               />
             </Routes>
             <Footer />
-            <Cart/>
+            <Cart />
           </StoreProvider>
         </div>
       </Router>

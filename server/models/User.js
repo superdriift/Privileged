@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Product  = require('./Product')
+
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
@@ -26,6 +28,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  // wishlist: [Product.schema],
   orders: [Order.schema]
 });
 

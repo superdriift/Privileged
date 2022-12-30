@@ -41,12 +41,12 @@ function Signup(props) {
       <Link style={{ color: "black", textDecoration: "none", fontFamily:"Proxima Nova" }} to="/login">← Login</Link>
       <br/>
       <br/>
-      <h1 style={{ textAlign:"center", fontFamily:"Inknut Antiqua" }}> Signup </h1>
+      <h1 style={{ textAlign:"center", fontSize:"36pt", fontFamily:"Inknut Antiqua" }}> Signup </h1>
       <br/>
       <div style={{ display:"flex", justifyContent:"center" }}>
       <form  onSubmit={handleFormSubmit}>
       <div className="flex-row space-between my-2">
-          <label htmlFor="firstName" style={{ fontFamily: "Proxima Nova" }}>First Name:</label>
+          <label htmlFor="firstName" style={{ fontSize:"17pt", fontFamily: "Proxima Nova" }}>First Name:</label>
           <input
             placeholder="First"
             name="firstName"
@@ -56,7 +56,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="lastName" style={{ fontFamily: "Proxima Nova" }}>Last Name:</label>
+          <label htmlFor="lastName" style={{ fontSize:"17pt", fontFamily: "Proxima Nova" }}>Last Name:</label>
           <input
             placeholder="Last"
             name="lastName"
@@ -66,7 +66,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email" style={{ fontFamily: "Proxima Nova" }}>Email:</label>
+          <label htmlFor="email" style={{ fontSize:"17pt", fontFamily: "Proxima Nova" }}>Email:</label>
           <input
             placeholder="youremail@test.com"
             name="email"
@@ -76,7 +76,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd" style={{ fontFamily: "Proxima Nova" }}>Password:</label>
+          <label htmlFor="pwd" style={{ fontSize:"17pt", fontFamily: "Proxima Nova" }}>Password:</label>
           <input
             placeholder="******"
             name="password"

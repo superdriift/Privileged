@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Wishlist } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -43,9 +43,23 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    // wishlist: async (parent, { _id }, context) => {
+    //   if (context.user) {
+    //     const wishlistuser = await User.findById(context.user._id)
+    //     return(
+    //       wishlistuser.wishlist
+    //     )
+    //   }
+    //   return (
+    //     <>
+    //     <h2> resolvers.js error ju try again </h2>
+    //     </>
+    //   )
+    // },
     order: async (parent, { _id }, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
+        const user = await User.findById(context.user._id)
+        .populate({
           path: 'orders.products',
           populate: 'category'
         });
@@ -111,11 +125,19 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    // addWishList: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const wishlistitem = new Wishlist({ args });
+
+    //     await User.findByIdAndUpdate(context.user._id, { $push: { wishlist: wishlistitem } });
+
+    //     return(wishlistitem)
+    //   }
+    // },
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+        return await User.findByIdAndUpdate(context.user._id, args, { new: true })
       }
-
       throw new AuthenticationError('Not logged in');
     },
     updateProduct: async (parent, { _id, quantity }) => {

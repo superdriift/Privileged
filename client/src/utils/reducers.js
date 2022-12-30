@@ -9,7 +9,7 @@ import {
   UPDATE_CURRENT_CATEGORY,
   CLEAR_CART,
   TOGGLE_CART,
-  SEARCH
+  ADD_TO_WISHLIST
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -26,6 +26,12 @@ export const reducer = (state, action) => {
         cartOpen: true,
         cart: [...state.cart, action.product],
       };
+
+    // case ADD_TO_WISHLIST:
+    //   return {
+    //     ...state,
+    //     wishlist: [...state.wishlist, ...action.product]
+    //   }
 
     case ADD_MULTIPLE_TO_CART:
       return {

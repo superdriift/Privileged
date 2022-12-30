@@ -21,6 +21,7 @@ import { QUERY_CATEGORIES } from '../../utils/queries';
 
 
 
+
 const Catbar = () => {
   const [state, dispatch] = useStoreContext();
 
@@ -64,9 +65,9 @@ const Catbar = () => {
     });
   };
 
-  return (
-    <Navbar sticky='top' bg={'white'} expand="lg" id='navbar' style={{ paddingLeft: "10px", paddingRight: "10px" }}>
-      <Container fluid>
+  return ( 
+    <Navbar className="bars" sticky='top' bg='' expand="lg" id='navbar' style={{ paddingLeft: "10px", paddingRight: "10px" }}>
+      <Container fluid >
         {/* <Navbar.Brand href="#navbar"> All Pieces </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -94,6 +95,7 @@ const Catbar = () => {
       </Container>
       <br />
     </Navbar>
+
   )
 }
 

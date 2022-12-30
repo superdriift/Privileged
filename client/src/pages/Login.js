@@ -38,15 +38,15 @@ function Login(props) {
         <Link style={{ color: "black", textDecoration: "none", fontFamily: "Proxima Nova" }} to="/signup">← Signup</Link>
         <br />
         <br />
-        <h1 style={{ textAlign: "center", fontFamily: "Inknut Antiqua" }}> Welcome Back! </h1>
+        <h1 style={{ textAlign: "center", fontSize:"36pt", fontFamily: "Inknut Antiqua" }}> Welcome Back! </h1>
 
         <br />
-        <h2 style={{ textAlign:"center", fontFamily:"Inknut Antiqua" }}>Login</h2>
+        <h2 style={{ textAlign:"center", fontSize:"28pt", fontFamily:"Inknut Antiqua" }}>Login</h2>
         <br/>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <form onSubmit={handleFormSubmit}>
             <div className="flex-row space-between my-2">
-              <label htmlFor="email" style={{ fontFamily: "Proxima Nova" }} >Email address:</label>
+              <label htmlFor="email" style={{ fontSize:"17pt", fontFamily: "Proxima Nova" }} >Email address:</label>
               <input
                 placeholder="youremail@test.com"
                 name="email"
@@ -56,7 +56,7 @@ function Login(props) {
               />
             </div>
             <div className="flex-row space-between my-2">
-              <label htmlFor="pwd" style={{ fontFamily: "Proxima Nova" }}>Password:</label>
+              <label htmlFor="pwd" style={{ fontSize:"17pt", fontFamily: "Proxima Nova" }}>Password:</label>
               <input
                 placeholder="******"
                 name="password"

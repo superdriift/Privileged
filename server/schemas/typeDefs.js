@@ -22,6 +22,11 @@ const typeDefs = gql`
     products: [Product]
   }
 
+  type Wishlist {
+    _id: ID,
+    wishlist: [ Product ]
+  }
+
   type User {
     _id: ID
     firstName: String

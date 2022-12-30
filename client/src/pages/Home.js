@@ -13,9 +13,9 @@ function Home() {
   return (
     <>
       <br />
-      <Container style={{ backgroundColor: "lightgrey", textAlign: "center" }}>
-        <br />
-        <h1 style={{ fontSize: "40pt", fontWeight: 480, fontFamily: "Inknut Antiqua", textAlign: "center" }}> Privileged Pieces </h1>
+      <h1 style={{ fontSize: "40pt", fontWeight: 480, fontFamily: "Inknut Antiqua", textAlign: "center" }}> Privileged Pieces </h1>
+        {/* <br /> */}
+      <Container style={{ backgroundColor: "black", borderRadius:"10px", textAlign: "center" }}>
         <br />
         <Row >
           <Carousel style={{}} pause="hover" indicators={false} variant="dark">
@@ -27,7 +27,7 @@ function Home() {
               />
               <br />
               <br />
-              <h3 style={{ fontFamily: "Inknut Antiqua", fontStyle: "italic" }}> Jade Bear Rope Necklace </h3>
+              <h3 style={{ color:"white", fontFamily: "Inknut Antiqua", fontStyle: "italic" }}> Jade Bear Rope Necklace </h3>
               {/* <Carousel.Caption>
               <h5 style={{ fontWeight:"heavy" }}> Jade Bear Rope Necklace </h5>
               <p style={{ fontStyle:"italic" }}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -41,7 +41,7 @@ function Home() {
               />
               <br />
               <br />
-              <h3 style={{ textAlign: "center", fontFamily: "Inknut Antiqua", fontStyle: "italic" }}> Jade Hog/Pig Rope Necklace </h3>
+              <h3 style={{ color:"white", textAlign: "center", fontFamily: "Inknut Antiqua", fontStyle: "italic" }}> Jade Hog/Pig Rope Necklace </h3>
               {/* <Carousel.Caption>
               <h5>Second slide label</h5>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -55,7 +55,7 @@ function Home() {
               />
               <br />
               <br />
-              <h3 style={{ textAlign: "center", fontFamily: "Inknut Antiqua", fontStyle: "italic" }}> Jade Dragon Decorative Comb </h3>
+              <h3 style={{ color:"white", textAlign:"center", fontFamily: "Inknut Antiqua", fontStyle: "italic" }}> Jade Dragon Decorative Comb </h3>
               {/* <Carousel.Caption>
               <h5>Third slide label</h5>
               <p>
@@ -70,10 +70,11 @@ function Home() {
           <br />
         </Row>
         <Row>
-          <Col style={{ display: "flex", justifyContent: "center", alignItem: "center" }} > <Button variant="outline-dark" size="lg" href="/products" style={{ textDecoration: "none", }}> View All Products </Button>{' '} </Col>
+          <Col style={{  color:"white", display: "flex", justifyContent: "center", alignItem: "center" }} > <Button variant="outline-success" size="lg" href="/products" style={{ textDecoration: "none", }}> View All Products </Button>{' '} </Col>
         </Row>
         <br/>
       </Container>
+      <br/>
     </>
   );
 }

@@ -7,10 +7,9 @@ import Container from "react-bootstrap/esm/Container";
 const Products = () => {
     return (
         <>
-            <Container fluid className="m-auto">
+            <div fluid className="m-auto" style={{ background:"##fffff8" }}>
                 <ProductList />
-            </Container>
-
+            </div>
             {/* <Cart /> */}
         </>
     )

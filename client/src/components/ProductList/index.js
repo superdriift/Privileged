@@ -66,9 +66,9 @@ function ProductList() {
     <div>
       <br />
       <br />
-      <h2 style={{ display: "flex", fontSize:"36pt", fontFamily:"Inknut Antiqua", justifyContent: "center" }}>Pieces</h2>
+      <h2 style={{ display: "flex", fontSize: "36pt", fontFamily: "Inknut Antiqua", justifyContent: "center" }}>Pieces</h2>
       <br />
-      <h4 style={{ display: "flex", justifyContent: "center", fontSize:"18pt", fontStyle:"italic", fontFamily:"Inknut Antiqua" }} > All of our pieces are handmade & responsibly sourced from the finest collections worldwide. </h4>
+      <h4 style={{ display: "flex", justifyContent: "center", fontSize: "18pt", fontStyle: "italic", fontFamily: "Inknut Antiqua" }} > All of our jade gemstones are hand-carved and sourced from southeast Asia. </h4>
       <br />
       <br />
       <Catbar />
@@ -77,9 +77,9 @@ function ProductList() {
       <br />
       {/* <Container fluid>
         <Row >  */}
-        {state.products.length ? (
-          <div className='flex-row'>
-            {filterProducts().map((product) => (
+      {state.products.length ? (
+        <div className='flex-row'>
+          {filterProducts().map((product) => (
               <ProductItem
                 key={product._id}
                 _id={product._id}
@@ -90,13 +90,13 @@ function ProductList() {
                 description={product.description}
                 category={product.category}
               />
-            ))}
-          </div>
-        ) : (
-          <h3>No products yet, check back soon!</h3>
-        )}
-        {loading ? <img src={spinner} alt="loading" /> : null}
-        {/* </Row>
+          ))}
+        </div>
+      ) : (
+        <h3>No products yet, check back soon!</h3>
+      )}
+      {loading ? <img src={spinner} alt="loading" /> : null}
+      {/* </Row>
       </Container> */}
     </ div>
 

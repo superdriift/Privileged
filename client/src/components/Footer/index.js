@@ -84,11 +84,8 @@ function Footer() {
     //   )
     // } else {
       return (
-        <>
-          <br />
-          <br />
-          <br />
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+        <div style={{ backgroundColor:"black" }}>
+          <Navbar collapseOnSelect expand="lg" bg="" variant="dark" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
             <Container fluid>
               {/* <Navbar.Brand href="/"> Privileged Pieces </Navbar.Brand> */}
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -101,7 +98,7 @@ function Footer() {
               </Navbar.Collapse>
             </Container>
           </Navbar>
-        </>
+        </div>
       )
     }
   // }
